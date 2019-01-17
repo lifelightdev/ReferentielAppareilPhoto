@@ -12,7 +12,10 @@
 			<td>Hello Expertus</td>
 		</tr>
 		<tr>
-			<td><html:link page="/listeMarque.do">Liste des Marques</html:link></td>
+			<td><html:link page="/listeMarque.do">Liste des marques</html:link></td>
+		</tr>
+		<tr>
+			<td><html:link page="/listeModele.do">Liste des modeles</html:link></td>
 		</tr>
 	</table>
 </body>

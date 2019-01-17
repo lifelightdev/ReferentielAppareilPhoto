@@ -12,6 +12,6 @@
 		<property name="nom" type="java.lang.String">
 			<column name="Nom" />
 		</property>	
-		<many-to-one name="Marque" column="Marque" not-null="true" />
+		<many-to-one name="Marque" column="Marque" not-null="true" lazy="false" />
 	</class>
 </hibernate-mapping>

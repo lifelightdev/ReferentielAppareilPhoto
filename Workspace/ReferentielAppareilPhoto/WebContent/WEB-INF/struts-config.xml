@@ -7,6 +7,7 @@
 
 	<form-beans>
 		<form-bean name="MarqueForm" type="life.light.common.form.MarqueForm" />
+		<form-bean name="ModeleForm" type="life.light.common.form.ModeleForm" />
 	</form-beans>
 
 	<action-mappings>
@@ -22,6 +23,20 @@
 			<forward name="Ajouter" path="/JSP/ajouterMarque.jsp" />
 			<forward name="Editer" path="/JSP/editerMarque.jsp" />
 			<forward name="Supprimer" path="/JSP/supprimerMarque.jsp" />
+		</action>
+		
+		<action path="/listeModele"
+			type="life.light.common.action.ListeModeleAction" 
+			validate="false"  scope="session">
+			<forward name="success" path="/JSP/listeModele.jsp" />
+		</action>
+		<action path="/modeleAction"
+			type="life.light.common.action.ModeleActions"
+			parameter="actionMethod" name="ModeleForm" validate="false"
+			scope="session">
+			<forward name="Ajouter" path="/JSP/ajouterModele.jsp" />
+			<forward name="Editer" path="/JSP/editerModele.jsp" />
+			<forward name="Supprimer" path="/JSP/supprimerModele.jsp" />
 		</action>
 	</action-mappings>
 
