@@ -6,9 +6,23 @@
 <struts-config>
 
 	<form-beans>
+		<form-bean name="MarqueForm" type="life.light.common.form.MarqueForm" />
 	</form-beans>
 
 	<action-mappings>
+		<action path="/listeMarque"
+			type="life.light.common.action.ListeMarqueAction" 
+			validate="false"  scope="session">
+			<forward name="success" path="/JSP/listeMarque.jsp" />
+		</action>
+		<action path="/marqueAction"
+			type="life.light.common.action.MarqueActions"
+			parameter="actionMethod" name="MarqueForm" validate="false"
+			scope="session">
+			<forward name="Ajouter" path="/JSP/ajouterMarque.jsp" />
+			<forward name="Editer" path="/JSP/editerMarque.jsp" />
+			<forward name="Supprimer" path="/JSP/supprimerMarque.jsp" />
+		</action>
 	</action-mappings>
 
 </struts-config>
