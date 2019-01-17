@@ -6,16 +6,9 @@
 <struts-config>
 
 	<form-beans>
-		<form-bean name="helloExpertusForm"
-			type="life.light.common.form.HelloExpertusForm" />
 	</form-beans>
 
 	<action-mappings>
-		<action path="/helloExpertus"
-			type="life.light.common.action.HelloExpertusAction"
-			name="helloExpertusForm">
-			<forward name="success" path="/HelloExpertus.jsp" />
-		</action>
 	</action-mappings>
 
 </struts-config>
