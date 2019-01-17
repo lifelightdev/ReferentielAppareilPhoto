@@ -11,7 +11,8 @@
 				<td>
 					<html:text property="nom"/>
 				</td>
-			</tr>
+			</tr>			
+		</table>
 		<table>
 			<tr>
 				<td><input type="submit" name="actionMethod" value="Enregistre" /></td>
