@@ -7,7 +7,7 @@
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
-<%@ page import="life.light.common.bean.Modele"%>
+<%@ page import="life.light.common.bean.Appareil"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,23 +15,23 @@
 <title>Liste des modeles</title>
 </head>
 <body>	
-	<form name="modeleForm" action="/ReferentielAppareilPhoto/modeleAction.do">
+	<form name="AppareilForm" action="/ReferentielAppareilPhoto/appareilAction.do">
 		<table>
 			<tr>
 				<th>&nbsp;</th>
-				<th>Marque</th>
-				<th>Nom</th>
+				<th>Modele</th>
+				<th>Type</th>
 			</tr>
 			<%
-				List<Modele> list = (ArrayList) request.getAttribute("listeModele");
+				List<Appareil> list = (ArrayList) request.getAttribute("listeAppareil");
 				Iterator itr = list.iterator();
 				while (itr.hasNext()) {
-					Modele modele = (Modele) itr.next();
+					Appareil appareil = (Appareil) itr.next();
 			%>
 			<tr>
-				<td><input type="radio" name="idModele" value='<%=modele.getId()%>' onclick="javascript:enableEditDelete();"></td>
-				<td><%=modele.getMarque().getNom()%></td>
-				<td><%=modele.getNom()%></td>
+				<td><input type="radio" name="idAppareil" value='<%=appareil.getId()%>' onclick="javascript:enableEditDelete();"></td>
+				<td><%=appareil.getModele().getNom()%></td>
+				<td><%=appareil.getType().getNom()%></td>
 			</tr>
 			<%
 				}
@@ -47,7 +47,7 @@
 	</form>
 	<script>
 		function checkDelete() {
-			return confirm("Êtes-vous sûr de vouloir supprimer cette marque ?");
+			return confirm("Êtes-vous sûr de vouloir supprimer cet appareil ?");
 		}
 		function enableEditDelete() {
 			document.getElementById('editbutton').disabled = false;

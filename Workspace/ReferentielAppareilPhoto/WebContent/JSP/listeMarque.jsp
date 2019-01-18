@@ -15,7 +15,7 @@
 <title>Liste des marques</title>
 </head>
 <body>	
-	<form name="AppareilForm" action="/ReferentielAppareilPhoto/marqueAction.do">
+	<form name="MarqueForm" action="/ReferentielAppareilPhoto/marqueAction.do">
 		<table>
 			<tr>
 				<th>&nbsp;</th>

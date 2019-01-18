@@ -17,6 +17,9 @@
 		<tr>
 			<td><html:link page="/listeModele.do">Liste des modeles</html:link></td>
 		</tr>
+		<tr>
+			<td><html:link page="/listeAppareil.do">Liste des appareils</html:link></td>
+		</tr>
 	</table>
 </body>
 </html>

@@ -10,12 +10,12 @@
 			<generator class="identity" />
 		</id>
 		<property name="photo" type="binary">
-			<column name="PHOTO" not-null="true" />
+			<column name="PHOTO" not-null="false" />
 		</property>
 		<property name="ModeEmploie" type="binary">
-			<column name="ModeEmploie" not-null="true" />
+			<column name="ModeEmploie" not-null="false" />
 		</property>
-		<many-to-one name="Type" column="type" not-null="true" />
-		<many-to-one name="Modele" column="modele" not-null="true" />
+		<many-to-one name="Type" column="type" not-null="true" lazy="false"/>
+		<many-to-one name="Modele" column="modele" not-null="true" lazy="false"/>
 	</class>
 </hibernate-mapping>
