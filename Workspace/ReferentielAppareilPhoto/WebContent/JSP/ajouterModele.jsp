@@ -24,6 +24,7 @@
 		<table>
 			<tr>
 				<td><input type="submit" name="actionMethod" value="Enregistre" /></td>
+				<td><input type="submit" name="actionMethod" value="Retour" /></td>
 			</tr>
 		</table>
 	</html:form>

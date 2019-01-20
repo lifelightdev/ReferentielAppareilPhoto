@@ -95,5 +95,12 @@ public class ModeleActions extends DispatchAction {
 		return new ActionForward("/listeModele.do", true);
 
 	}
+	
+	public ActionForward Retour(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {		
+		
+		return new ActionForward("/listeModele.do", true);
+
+	}
 
 }

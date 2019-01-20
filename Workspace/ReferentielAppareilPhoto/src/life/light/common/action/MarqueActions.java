@@ -74,5 +74,12 @@ public class MarqueActions extends DispatchAction {
 		return new ActionForward("/listeMarque.do", true);
 
 	}
+	
+	public ActionForward Retour(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {		
+		
+		return new ActionForward("/listeMarque.do", true);
+
+	}
 
 }

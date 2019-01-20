@@ -24,6 +24,7 @@
 			<forward name="Ajouter" path="/JSP/ajouterMarque.jsp" />
 			<forward name="Editer" path="/JSP/editerMarque.jsp" />
 			<forward name="Supprimer" path="/JSP/supprimerMarque.jsp" />
+			<forward name="Retour" path="/JSP/listeMarque.jsp" />
 		</action>
 		
 		<action path="/listeModele"
@@ -38,6 +39,7 @@
 			<forward name="Ajouter" path="/JSP/ajouterModele.jsp" />
 			<forward name="Editer" path="/JSP/editerModele.jsp" />
 			<forward name="Supprimer" path="/JSP/supprimerModele.jsp" />
+			<forward name="Retour" path="/JSP/listeModele.jsp" />
 		</action>
 		
 		<action path="/listeAppareil"
@@ -52,6 +54,7 @@
 			<forward name="Ajouter" path="/JSP/ajouterAppareil.jsp" />
 			<forward name="Editer" path="/JSP/editerAppareil.jsp" />
 			<forward name="Supprimer" path="/JSP/supprimerAppareil.jsp" />
+			<forward name="Retour" path="/JSP/listeAppareil.jsp" />
 		</action>
 	</action-mappings>
 

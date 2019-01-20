@@ -19,6 +19,7 @@
 		<table>
 			<tr>
 				<td><input type="submit" name="actionMethod" value="MiseAJour" /></td>
+				<td><input type="submit" name="actionMethod" value="Retour" /></td>
 			</tr>
 		</table>
 	</html:form>
