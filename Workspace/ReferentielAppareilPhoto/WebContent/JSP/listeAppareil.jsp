@@ -8,6 +8,8 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Iterator"%>
 <%@ page import="life.light.common.bean.Appareil"%>
+<%@ page import="java.io.File" %>
+<%@ page import="org.apache.commons.io.FileUtils" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +23,8 @@
 				<th>&nbsp;</th>
 				<th>Modele</th>
 				<th>Type</th>
+				<th>Photo</th>
+				<th>Mode d'emploie</th>
 			</tr>
 			<%
 				List<Appareil> list = (ArrayList) request.getAttribute("listeAppareil");
@@ -30,8 +34,12 @@
 			%>
 			<tr>
 				<td><input type="radio" name="idAppareil" value='<%=appareil.getId()%>' onclick="javascript:enableEditDelete();"></td>
-				<td><%=appareil.getModele().getNom()%></td>
+				<td><%=appareil.getModele().getMarque().getNom()%> - <%=appareil.getModele().getNom()%></td>
 				<td><%=appareil.getType().getNom()%></td>
+				<td><img width="50" height="50"src="<%=appareil.getUrlPhoto()%>"></td>
+				<td>
+					<a href="<%=appareil.getUrlModeEmploie()%>"><%=appareil.getNomFichierModeEmploie()%></a>	
+				</td>
 			</tr>
 			<%
 				}

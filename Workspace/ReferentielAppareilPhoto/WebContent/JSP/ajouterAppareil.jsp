@@ -4,7 +4,7 @@
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <html>
 <body>
-	<html:form>
+	<html:form method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>Marque</td>
@@ -20,6 +20,18 @@
 					<html:select property="idType">
 						<html:optionsCollection name="AppareilForm" property="types" label="nom" value="id" />
 					</html:select>
+				</td>
+			</tr>
+			<tr>
+				<td>Photo</td>
+				<td>
+					<html:file property="photo"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mode d'emploie</td>
+				<td>
+					<html:file property="modeEmploie"/>
 				</td>
 			</tr>			
 		</table>

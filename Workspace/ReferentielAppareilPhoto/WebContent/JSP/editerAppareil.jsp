@@ -7,7 +7,7 @@
 <title>Modification d'un appareil</title>
 </head>
 <body>
-	<html:form>
+	<html:form method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>Marque</td>
@@ -25,6 +25,18 @@
 					</html:select>
 				</td>
 			</tr>
+			<tr>
+				<td>Photo</td>
+				<td>
+					<html:file property="photo"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Mode d'emploie</td>
+				<td>
+					<html:file property="modeEmploie"/>
+				</td>
+			</tr>			
 		</table>
 		<table>
 			<tr>

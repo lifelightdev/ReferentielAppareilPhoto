@@ -1,5 +1,6 @@
 package life.light.common.action;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -74,6 +75,13 @@ public class AppareilActions extends DispatchAction {
 		appareil.setModele(modele);	
 		appareil.setType(type);
 		
+		try {
+			appareil.setPhoto(appareilForm.getPhoto().getFileData());
+			appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		appareilService.persist(appareil);
 		
 		return new ActionForward("/listeAppareil.do", true);
@@ -95,6 +103,13 @@ public class AppareilActions extends DispatchAction {
 		Appareil appareil =  appareilService.findById(appareilForm.getIdAppareil());
 		appareil.setModele(modele);
 		appareil.setType(type);
+		
+		try {
+			appareil.setPhoto(appareilForm.getPhoto().getFileData());
+			appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		appareilService.update(appareil);
 		
