@@ -1,0 +1,8 @@
+body {
+	background-color: #F2E5BD;
+}
+
+p.error {
+	color: red;
+	font-weight: normal;
+}

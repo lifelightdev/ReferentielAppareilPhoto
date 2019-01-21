@@ -2,7 +2,12 @@ package life.light.common.form;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
 import life.light.common.bean.Modele;
@@ -91,6 +96,32 @@ public class AppareilForm extends ActionForm {
 	}
 	public void setUrlModeEmploie(String urlModeEmploie) {
 		this.urlModeEmploie = urlModeEmploie;
-	}	
+	}
+
+	@Override
+	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+
+		ActionErrors errors = new ActionErrors();
+
+		if (getPhoto() != null) {
+			if (getPhoto().getFileSize() > 0) {
+				if (!"image/jpeg".equals(getPhoto().getContentType())) {
+					errors.add("common.file.err.image", new ActionMessage("error.common.file.jpeg.only"));
+					//return errors;
+				}
+			}
+		}
+		
+		if (getModeEmploie() != null) {
+			if (getModeEmploie().getFileSize() > 0) {
+				if (!"application/pdf".equals(getModeEmploie().getContentType())) {
+					errors.add("common.file.err.pdf", new ActionMessage("error.common.file.pdf.only"));
+					//return errors;
+				}
+			}
+		}
+
+		return errors;
+	}
 
 }

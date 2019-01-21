@@ -51,8 +51,9 @@
 		</action>
 		<action path="/appareilAction"
 			type="life.light.common.action.AppareilActions"
-			parameter="actionMethod" name="AppareilForm" validate="false"
-			scope="session">
+			parameter="actionMethod" name="AppareilForm" validate="true"
+			scope="session"
+			input="/JSP/erreurAppareil.jsp">
 			<forward name="Ajouter" path="/JSP/ajouterAppareil.jsp" />
 			<forward name="Editer" path="/JSP/editerAppareil.jsp" />
 			<forward name="Supprimer" path="/JSP/supprimerAppareil.jsp" />
@@ -60,5 +61,7 @@
 			<forward name="Accueil" path="/index.jsp" />
 		</action>
 	</action-mappings>
+	
+	<message-resources parameter="Common" />
 
 </struts-config>
