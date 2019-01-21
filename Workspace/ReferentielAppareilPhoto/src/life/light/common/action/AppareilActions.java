@@ -59,7 +59,7 @@ public class AppareilActions extends DispatchAction {
 		return mapping.findForward("Editer");
 	}
 
-	public ActionForward Enregistre(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+	public ActionForward Enregistrer(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
 		AppareilForm appareilForm = (AppareilForm) form;
@@ -88,7 +88,7 @@ public class AppareilActions extends DispatchAction {
 
 	}
 
-	public ActionForward MiseAJour(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+	public ActionForward Sauvegarder(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
 		AppareilForm appareilForm = (AppareilForm) form;	

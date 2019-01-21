@@ -34,7 +34,7 @@ public class MarqueActions extends DispatchAction {
 		return mapping.findForward("Editer");
 	}
 
-	public ActionForward Enregistre(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+	public ActionForward Enregistrer(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
 		MarqueForm marqueform = (MarqueForm) form;
@@ -49,7 +49,7 @@ public class MarqueActions extends DispatchAction {
 
 	}
 
-	public ActionForward MiseAJour(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+	public ActionForward Sauvegarder(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) {
 
 		MarqueForm marqueform = (MarqueForm) form;		
