@@ -14,14 +14,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Liste des modeles</title>
+<title>Liste des appareils</title>
+<link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>	
 	<form name="AppareilForm" action="/ReferentielAppareilPhoto/appareilAction.do">
 		<table>
 			<tr>
 				<th>&nbsp;</th>
-				<th>Modele</th>
+				<th>Modèle</th>
 				<th>Type</th>
 				<th>Photo</th>
 				<th>Mode d'emploie</th>
@@ -50,6 +51,7 @@
 				<td><input type="submit" name="actionMethod" value="Ajouter"/></td>
 				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" /></td>
 				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" /></td>
+				<td><input type="submit" name="actionMethod" value="Accueil" /></td>
 			</tr>
 		</table>
 	</form>

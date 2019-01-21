@@ -134,5 +134,12 @@ public class AppareilActions extends DispatchAction {
 		return new ActionForward("/listeAppareil.do", true);
 
 	}
+	
+	public ActionForward Accueil(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {		
+		
+		return new ActionForward("/index.jsp", true);
+
+	}
 
 }

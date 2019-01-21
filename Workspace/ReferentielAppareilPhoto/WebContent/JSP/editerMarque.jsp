@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Marque</title>
+<title>Modification d'une marque</title>
+<link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
 	<html:form>

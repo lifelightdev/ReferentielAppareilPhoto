@@ -81,5 +81,12 @@ public class MarqueActions extends DispatchAction {
 		return new ActionForward("/listeMarque.do", true);
 
 	}
+	
+	public ActionForward Accueil(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {		
+		
+		return new ActionForward("/index.jsp", true);
+
+	}
 
 }

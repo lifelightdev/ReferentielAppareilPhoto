@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Modification d'un modele</title>
+<title>Modification d'un modèle</title>
+<link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
 	<html:form>

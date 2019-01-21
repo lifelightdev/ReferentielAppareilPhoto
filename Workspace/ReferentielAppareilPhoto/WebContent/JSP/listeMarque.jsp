@@ -13,6 +13,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Liste des marques</title>
+<link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>	
 	<form name="MarqueForm" action="/ReferentielAppareilPhoto/marqueAction.do">
@@ -40,6 +41,7 @@
 				<td><input type="submit" name="actionMethod" value="Ajouter"/></td>
 				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" /></td>
 				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" /></td>
+				<td><input type="submit" name="actionMethod" value="Accueil" /></td>
 			</tr>
 		</table>
 	</form>

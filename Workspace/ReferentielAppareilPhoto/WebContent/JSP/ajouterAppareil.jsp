@@ -3,11 +3,16 @@
 <!DOCTYPE html>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajouter un appareil</title>
+<link rel="stylesheet" href="CSS/style.css" />
+</head>
 <body>
 	<html:form method="POST" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td>Marque</td>
+				<td>Modèle</td>
 				<td>					
 					<html:select property="idModele">
 						<html:optionsCollection name="AppareilForm" property="modeles" label="nom" value="id" />

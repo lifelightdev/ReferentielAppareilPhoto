@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="CSS/style.css" />
 <title>Hello Expertus</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
 			<td><html:link page="/listeMarque.do">Liste des marques</html:link></td>
 		</tr>
 		<tr>
-			<td><html:link page="/listeModele.do">Liste des modeles</html:link></td>
+			<td><html:link page="/listeModele.do">Liste des modèles</html:link></td>
 		</tr>
 		<tr>
 			<td><html:link page="/listeAppareil.do">Liste des appareils</html:link></td>

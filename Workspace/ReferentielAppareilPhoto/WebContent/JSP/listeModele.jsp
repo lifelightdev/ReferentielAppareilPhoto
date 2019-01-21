@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
@@ -12,7 +13,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Liste des modeles</title>
+<title>Liste des modèles</title>
+<link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>	
 	<form name="modeleForm" action="/ReferentielAppareilPhoto/modeleAction.do">
@@ -42,6 +44,7 @@
 				<td><input type="submit" name="actionMethod" value="Ajouter"/></td>
 				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" /></td>
 				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" /></td>
+				<td><input type="submit" name="actionMethod" value="Accueil" /></td>
 			</tr>
 		</table>
 	</form>

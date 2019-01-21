@@ -102,5 +102,12 @@ public class ModeleActions extends DispatchAction {
 		return new ActionForward("/listeModele.do", true);
 
 	}
+	
+	public ActionForward Accueil(ActionMapping mapping, ActionForm form, HttpServletRequest request,
+			HttpServletResponse response) {		
+		
+		return new ActionForward("/index.jsp", true);
+
+	}
 
 }
