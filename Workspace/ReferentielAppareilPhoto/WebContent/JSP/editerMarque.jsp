@@ -8,21 +8,27 @@
 <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
+	<jsp:include page="/menu.jsp" />
+	<h1>Modification d'une marque</h1>
+	<div class="container">
 	<html:form>
 		<table>
 			<tr>
-				<td>Nom</td>
+				<td><div class="form-group">Nom</div></td>
 				<td>
-					<html:text property="nom"/>
+					<div class="form-group">
+						<html:text property="nom"/>
+					</div>
 				</td>
 			</tr>
 		</table>
 		<table>
 			<tr>
-				<td><input type="submit" name="actionMethod" value="Sauvegarder" /></td>
-				<td><input type="submit" name="actionMethod" value="Retour" /></td>
+				<td><input type="submit" name="actionMethod" value="Sauvegarder" class="btn"/></td>
+				<td><input type="submit" name="actionMethod" value="Retour" class="btn"/></td>
 			</tr>
 		</table>
 	</html:form>
+	</div>
 </body>
 </html>

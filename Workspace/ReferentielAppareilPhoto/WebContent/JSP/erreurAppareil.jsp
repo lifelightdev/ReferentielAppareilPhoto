@@ -9,6 +9,7 @@
 <title>Erreur</title>
 </head>
 <body>
+	<jsp:include page="/menu.jsp" /> 
 	<h1>
 		<bean:message key="label.common.title" />
 	</h1>

@@ -9,43 +9,60 @@
 <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>
-	<html:form method="POST" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td>Modèle</td>
-				<td>					
-					<html:select property="idModele">
-						<html:optionsCollection name="AppareilForm" property="modeles" label="nom" value="id" />
-					</html:select>
-				</td>
-			</tr>
-			<tr>
-				<td>Type</td>
-				<td>
-					<html:select property="idType">
-						<html:optionsCollection name="AppareilForm" property="types" label="nom" value="id" />
-					</html:select>
-				</td>
-			</tr>
-			<tr>
-				<td>Photo</td>
-				<td>
-					<html:file property="photo"/>
-				</td>
-			</tr>
-			<tr>
-				<td>Mode d'emploie</td>
-				<td>
-					<html:file property="modeEmploie"/>
-				</td>
-			</tr>			
-		</table>
-		<table>
-			<tr>
-				<td><input type="submit" name="actionMethod" value="Enregistrer" /></td>
-				<td><input type="submit" name="actionMethod" value="Retour" /></td>
-			</tr>
-		</table>
-	</html:form>
+	<jsp:include page="/menu.jsp" />
+	<h1>Ajouter un appareil</h1>
+	<div class="container">
+		<html:form method="POST" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td><div class="form-group">Modèle</div></td>
+					<td><div class="form-group">
+							<html:select property="idModele">
+								<html:optionsCollection name="AppareilForm" property="modeles"
+									label="nom" value="id" />
+							</html:select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div class="form-group">Type</div></td>
+					<td>
+						<div class="form-group">
+							<html:select property="idType">
+								<html:optionsCollection name="AppareilForm" property="types"
+									label="nom" value="id" />
+							</html:select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div class="form-group">Photo</div></td>
+					<td>
+						<div class="form-group">
+							<html:file property="photo" />
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><div class="form-group">Mode d'emploie</div></td>
+					<td>
+						<div class="form-group">
+							<html:file property="modeEmploie"/>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						<input type="submit" name="actionMethod" value="Enregistrer" class="btn"/>
+					</td>
+					<td>
+						<input type="submit" name="actionMethod" value="Retour" class="btn"/>
+					</td>
+				</tr>
+			</table>
+		</html:form>
+	</div>
 </body>
 </html>

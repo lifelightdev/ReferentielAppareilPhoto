@@ -16,8 +16,10 @@
 <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>	
+	<jsp:include page="/menu.jsp" />
+	<h1>Liste des marques</h1>
 	<form name="MarqueForm" action="/ReferentielAppareilPhoto/marqueAction.do">
-		<table>
+		<table class="table table-striped">
 			<tr>
 				<th>&nbsp;</th>
 				<th>Nom</th>
@@ -38,10 +40,9 @@
 		</table>
 		<table>
 			<tr>
-				<td><input type="submit" name="actionMethod" value="Ajouter"/></td>
-				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" /></td>
-				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" /></td>
-				<td><input type="submit" name="actionMethod" value="Accueil" /></td>
+				<td><input type="submit" name="actionMethod" value="Ajouter" class="btn"/></td>
+				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" class="btn"/></td>
+				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" class="btn"/></td>
 			</tr>
 		</table>
 	</form>

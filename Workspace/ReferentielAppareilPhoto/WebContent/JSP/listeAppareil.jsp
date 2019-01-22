@@ -18,8 +18,10 @@
 <link rel="stylesheet" href="CSS/style.css" />
 </head>
 <body>	
+	<jsp:include page="/menu.jsp" />
+	<h1>Liste des appareils</h1>
 	<form name="AppareilForm" action="/ReferentielAppareilPhoto/appareilAction.do">
-		<table>
+		<table class="table table-striped">
 			<tr>
 				<th>&nbsp;</th>
 				<th>Modèle</th>
@@ -37,7 +39,7 @@
 				<td><input type="radio" name="idAppareil" value='<%=appareil.getId()%>' onclick="javascript:enableEditDelete();"></td>
 				<td><%=appareil.getModele().getMarque().getNom()%> - <%=appareil.getModele().getNom()%></td>
 				<td><%=appareil.getType().getNom()%></td>
-				<td><img width="50" height="50"src="<%=appareil.getUrlPhoto()%>"></td>
+				<td><img width="50" height="50"src="<%=appareil.getUrlPhoto()%>" class="img-rounded"></td>
 				<td>
 					<a href="<%=appareil.getUrlModeEmploie()%>"><%=appareil.getNomFichierModeEmploie()%></a>	
 				</td>
@@ -48,10 +50,9 @@
 		</table>
 		<table>
 			<tr>
-				<td><input type="submit" name="actionMethod" value="Ajouter"/></td>
-				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" /></td>
-				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" /></td>
-				<td><input type="submit" name="actionMethod" value="Accueil" /></td>
+				<td><input type="submit" name="actionMethod" value="Ajouter" class="btn"/></td>
+				<td><input type="submit" name="actionMethod" id="editbutton" value="Editer" disabled="true" class="btn"/></td>
+				<td><input type="submit" name="actionMethod" id="deletebutton" value="Supprimer" disabled="true" onclick="return checkDelete();" class="btn"/></td>
 			</tr>
 		</table>
 	</form>
