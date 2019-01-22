@@ -107,7 +107,6 @@ public class AppareilForm extends ActionForm {
 			if (getPhoto().getFileSize() > 0) {
 				if (!"image/jpeg".equals(getPhoto().getContentType())) {
 					errors.add("common.file.err.image", new ActionMessage("error.common.file.jpeg.only"));
-					//return errors;
 				}
 			}
 		}
@@ -116,7 +115,6 @@ public class AppareilForm extends ActionForm {
 			if (getModeEmploie().getFileSize() > 0) {
 				if (!"application/pdf".equals(getModeEmploie().getContentType())) {
 					errors.add("common.file.err.pdf", new ActionMessage("error.common.file.pdf.only"));
-					//return errors;
 				}
 			}
 		}
