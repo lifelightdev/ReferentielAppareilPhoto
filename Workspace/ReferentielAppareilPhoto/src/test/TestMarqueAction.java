@@ -27,7 +27,7 @@ public class TestMarqueAction extends MockStrutsTestCase {
 
 	public void testAjouter() {
 
-		setRequestPathInfo("/marqueAction.do?actionMethod=Ajouter");
+		setRequestPathInfo("/marqueAction.do");
 		addRequestParameter("actionMethod", "Ajouter");
 		actionPerform();
 		verifyForward("Ajouter");		
@@ -36,7 +36,7 @@ public class TestMarqueAction extends MockStrutsTestCase {
 
 	public void testEditer() {
 
-		setRequestPathInfo("/marqueAction.do?actionMethod=Ajouter");
+		setRequestPathInfo("/marqueAction.do");
 		addRequestParameter("actionMethod", "Editer");
 		addRequestParameter("idMarque","1");
 		actionPerform();
