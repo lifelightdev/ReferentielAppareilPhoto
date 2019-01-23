@@ -45,7 +45,43 @@ public class TestMarqueAction extends MockStrutsTestCase {
 		verifyNoActionErrors();
 		
 	}
+	
+	public void testEnregistrer() {
 
+		setRequestPathInfo("/marqueAction.do");
+		addRequestParameter("actionMethod", "Enregistrer");
+		addRequestParameter("nom","NikonTest");
+		actionPerform();
+		assertEquals("NikonTest",((MarqueForm) getActionForm()).getNom());
+		verifyForwardPath("/listeMarque.do");
+		verifyNoActionErrors();
+		
+	}
+
+	public void testSauvegarder() {
+
+		setRequestPathInfo("/marqueAction.do");
+		addRequestParameter("actionMethod", "Sauvegarder");
+		addRequestParameter("idMarque","2");
+		addRequestParameter("nom","Rollei1");
+		actionPerform();
+		assertEquals("Rollei1",((MarqueForm) getActionForm()).getNom());
+		verifyForwardPath("/listeMarque.do");
+		verifyNoActionErrors();
+		
+	}
+	
+	public void testSupprimer() {
+
+		setRequestPathInfo("/marqueAction.do");
+		addRequestParameter("actionMethod", "Supprimer");
+		addRequestParameter("idMarque","5");
+		actionPerform();
+		verifyForwardPath("/listeMarque.do");
+		verifyNoActionErrors();
+		
+	}	
+	
 	public static void main(String[] args) {
 		junit.textui.TestRunner.run(TestMarqueAction.class);
 	}
