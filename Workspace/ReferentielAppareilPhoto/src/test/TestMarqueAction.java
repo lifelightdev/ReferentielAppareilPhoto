@@ -10,8 +10,8 @@ public class TestMarqueAction extends MockStrutsTestCase {
 	public void setUp() throws Exception {
 
 		super.setUp();
-		setContextDirectory(new File(
-				"E:\\MesDocuments\\ReferentielAppareilPhoto\\Workspace\\ReferentielAppareilPhoto\\WebContent"));
+		ConnectionBaseDeDonnees.initBDD();		
+		setContextDirectory(new File("E:\\MesDocuments\\ReferentielAppareilPhoto\\Workspace\\ReferentielAppareilPhoto\\WebContent"));
 		setInitParameter("validating", "false");
 		setConfigFile("/WEB-INF/struts-config.xml");
 
@@ -40,8 +40,8 @@ public class TestMarqueAction extends MockStrutsTestCase {
 		addRequestParameter("actionMethod", "Editer");
 		addRequestParameter("idMarque","1");
 		actionPerform();
-		verifyForward("Editer");
-		assertEquals("Nikon",((MarqueForm) getActionForm()).getNom());
+		verifyForwardPath("/listeMarque.do");
+		assertEquals("NikonTest",((MarqueForm) getActionForm()).getNom());
 		verifyNoActionErrors();
 		
 	}
@@ -59,23 +59,27 @@ public class TestMarqueAction extends MockStrutsTestCase {
 	}
 
 	public void testSauvegarder() {
+		
+		testEnregistrer();
 
 		setRequestPathInfo("/marqueAction.do");
 		addRequestParameter("actionMethod", "Sauvegarder");
-		addRequestParameter("idMarque","2");
-		addRequestParameter("nom","Rollei1");
+		addRequestParameter("idMarque","1");
+		addRequestParameter("nom","RolleiTest");
 		actionPerform();
-		assertEquals("Rollei1",((MarqueForm) getActionForm()).getNom());
+		assertEquals("RolleiTest",((MarqueForm) getActionForm()).getNom());
 		verifyForwardPath("/listeMarque.do");
 		verifyNoActionErrors();
 		
 	}
 	
 	public void testSupprimer() {
+		
+		testEnregistrer();
 
 		setRequestPathInfo("/marqueAction.do");
 		addRequestParameter("actionMethod", "Supprimer");
-		addRequestParameter("idMarque","5");
+		addRequestParameter("idMarque","1");
 		actionPerform();
 		verifyForwardPath("/listeMarque.do");
 		verifyNoActionErrors();
