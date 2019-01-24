@@ -10,10 +10,10 @@ public class TestMarqueAction extends MockStrutsTestCase {
 	public void setUp() throws Exception {
 
 		super.setUp();
-		ConnectionBaseDeDonnees.initBDD();		
-		setContextDirectory(new File("E:\\MesDocuments\\ReferentielAppareilPhoto\\Workspace\\ReferentielAppareilPhoto\\WebContent"));
+		ConnectionBaseDeDonnees.initBDD();
+		setContextDirectory(new File(Configuration.CONTEXTDIRECTORY));
 		setInitParameter("validating", "false");
-		setConfigFile("/WEB-INF/struts-config.xml");
+		setConfigFile(Configuration.CONFIGFILE);
 
 	}
 
@@ -35,6 +35,8 @@ public class TestMarqueAction extends MockStrutsTestCase {
 	}
 
 	public void testEditer() {
+		
+		testEnregistrer();
 
 		setRequestPathInfo("/marqueAction.do");
 		addRequestParameter("actionMethod", "Editer");
