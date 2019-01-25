@@ -76,8 +76,12 @@ public class AppareilActions extends DispatchAction {
 		appareil.setType(type);
 		
 		try {
-			appareil.setPhoto(appareilForm.getPhoto().getFileData());
-			appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+			if (appareilForm.getPhoto() != null) {
+				appareil.setPhoto(appareilForm.getPhoto().getFileData());
+			}
+			if (appareilForm.getModeEmploie() != null) {
+				appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -105,8 +109,12 @@ public class AppareilActions extends DispatchAction {
 		appareil.setType(type);
 		
 		try {
-			appareil.setPhoto(appareilForm.getPhoto().getFileData());
-			appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+			if (appareilForm.getPhoto() != null) {
+				appareil.setPhoto(appareilForm.getPhoto().getFileData());
+			}
+			if (appareilForm.getModeEmploie() != null) {
+				appareil.setModeEmploie(appareilForm.getModeEmploie().getFileData());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -132,13 +140,6 @@ public class AppareilActions extends DispatchAction {
 			HttpServletResponse response) {		
 		
 		return new ActionForward("/listeAppareil.do", true);
-
-	}
-	
-	public ActionForward Accueil(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) {		
-		
-		return new ActionForward("/index.jsp", true);
 
 	}
 
