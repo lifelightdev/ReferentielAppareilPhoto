@@ -2,7 +2,9 @@ package test;
 
 import java.io.File;
 
+import life.light.common.bean.Marque;
 import life.light.common.form.ModeleForm;
+import life.light.common.service.MarqueService;
 import servletunit.struts.MockStrutsTestCase;
 
 public class TestModeleAction extends MockStrutsTestCase {
@@ -15,14 +17,16 @@ public class TestModeleAction extends MockStrutsTestCase {
 		setInitParameter("validating", "false");
 		setConfigFile(Configuration.CONFIGFILE);
 		
+		ajouterMarque();
+		
 	}
 
 	private void ajouterMarque() {
 
-		setRequestPathInfo("/marqueAction.do");
-		addRequestParameter("actionMethod", "Enregistrer");
-		addRequestParameter("nom", "NikonTest");
-		actionPerform();
+		MarqueService marqueService = new MarqueService();
+		Marque marque = new Marque();
+		marque.setNom("RolleiTest");		
+		marqueService.persist(marque);
 
 	}
 
@@ -40,7 +44,9 @@ public class TestModeleAction extends MockStrutsTestCase {
 		addRequestParameter("actionMethod", "Ajouter");
 		actionPerform();
 		verifyForward("Ajouter");
+		assertEquals(false, ((ModeleForm) getActionForm()).getMarques().isEmpty());
 		verifyNoActionErrors();
+		
 	}
 
 	public void testEditer() {
@@ -60,9 +66,7 @@ public class TestModeleAction extends MockStrutsTestCase {
 
 	}
 
-	public void testEnregistrer() {		
-		
-		ajouterMarque();
+	public void testEnregistrer() {	
 
 		setRequestPathInfo("/modeleAction.do");
 		addRequestParameter("actionMethod", "Enregistrer");
