@@ -13,6 +13,7 @@ import org.apache.struts.upload.FormFile;
 import life.light.common.bean.Modele;
 import life.light.common.bean.Type;
 
+@SuppressWarnings("serial")
 public class AppareilForm extends ActionForm {
 
 	private int idAppareil;

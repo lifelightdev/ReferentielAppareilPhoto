@@ -67,6 +67,7 @@ public class TypeDAOImpl implements TypeDAO<Type, Integer> {
 		getCurrentSession().delete(entity);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Type> findAll() {
 		List<Type> types = (List<Type>) getCurrentSession().createQuery("from Type").list();
 		return types;

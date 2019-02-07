@@ -67,6 +67,7 @@ public class AppareilDAOImpl implements AppareilDAO<Appareil, Integer> {
 		getCurrentSession().delete(entity);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Appareil> findAll() {
 		List<Appareil> appareils = (List<Appareil>) getCurrentSession().createQuery("from Appareil").list();
 		return appareils;

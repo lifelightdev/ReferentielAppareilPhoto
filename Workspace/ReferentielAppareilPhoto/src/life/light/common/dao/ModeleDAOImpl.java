@@ -67,6 +67,7 @@ public class ModeleDAOImpl implements ModeleDAO<Modele, Integer> {
 		getCurrentSession().delete(entity);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Modele> findAll() {
 		List<Modele> modeles = (List<Modele>) getCurrentSession().createQuery("from Modele").list();
 		return modeles;

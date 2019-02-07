@@ -67,6 +67,7 @@ public class MarqueDAOImpl implements MarqueDAO<Marque, Integer> {
 		getCurrentSession().delete(entity);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Marque> findAll() {
 		List<Marque> marques = (List<Marque>) getCurrentSession().createQuery("from Marque").list();
 		return marques;
