@@ -1,12 +1,15 @@
 package life.light.referentielAppareilPhoto.dao;
 
 import life.light.referentielAppareilPhoto.model.Appareil;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface AppareilDao {
-    public List<Appareil> findAll();
-    public Appareil findById(int id);
-    public Appareil save(Appareil appareil);
+@Repository
+public interface AppareilDao extends JpaRepository<Appareil, Integer> {
+
+    Appareil findById(int id);
+    List<Appareil> findByModele(int modeleId);
 
 }

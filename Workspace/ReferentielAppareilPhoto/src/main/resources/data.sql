@@ -1,0 +1,3 @@
+INSERT INTO appareil VALUES (1,1,1);
+INSERT INTO appareil VALUES (2,2,2);
+INSERT INTO appareil VALUES (3,1,3);
