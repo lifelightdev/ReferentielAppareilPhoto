@@ -1,0 +1,21 @@
+<p>appareil-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">modeEmploie</th>
+            <th scope="col">modele</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appareil of appareils">
+            <td>{{ appareil.id }}<td>
+            <td>{{ appareil.modeEmploie }}</td>
+            <td>{{ appareil.modele }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
