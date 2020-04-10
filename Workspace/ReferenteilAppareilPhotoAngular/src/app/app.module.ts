@@ -5,15 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { AppareilFormComponent } from './appareil-form/appareil-form.component';
-import { AppareilServiceService } from './appareil-service.service';
+import { AppareilService } from './appareil.service';
 import { AppareilListComponent } from './appareil-list/appareil-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppareilListComponent,
-    AppareilFormComponent
+    AppareilListComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +19,7 @@ import { AppareilListComponent } from './appareil-list/appareil-list.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AppareilServiceService],
+  providers: [AppareilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

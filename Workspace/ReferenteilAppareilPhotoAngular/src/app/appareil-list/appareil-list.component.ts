@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppareilServiceService } from '../appareil-service.service';
+import { AppareilService } from '../appareil.service';
 import { Appareil } from '../appareil';
 
 @Component({
@@ -9,7 +9,7 @@ import { Appareil } from '../appareil';
 })
 export class AppareilListComponent implements OnInit {
 
-  constructor(private appareilService: AppareilServiceService) { }
+  constructor(private appareilService: AppareilService) { }
 
   appareils: Appareil[];
   ngOnInit(): void {
