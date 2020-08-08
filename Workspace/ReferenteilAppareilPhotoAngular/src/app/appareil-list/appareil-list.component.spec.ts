@@ -1,28 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppareilListComponent } from './appareil-list.component';
 import { AppareilService } from '../appareil.service';
-import {Appareil} from '../appareil';
 
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 
 describe('AppareilListComponent', () => {
   let component: AppareilListComponent;
   let fixture: ComponentFixture<AppareilListComponent>;
-
   let service: AppareilService;
 
-  jest.mock('@angular/common/http');
-
-  const httpClient = new HttpClient(null);
-
-
+  jest.mock('@angular/common/http');  
+    
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      providers: [ AppareilService ],
+      providers: [ AppareilService, HttpClient, HttpHandler ],
       declarations: [ AppareilListComponent ]
     })
       .compileComponents();
-    service = TestBed.get(AppareilService);
+      service = TestBed.get(AppareilService);
   }));
 
   beforeEach(() => {
@@ -31,7 +27,7 @@ describe('AppareilListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create AppareilListComponent', () => {
     expect(component).toBeTruthy();
   });
 });
