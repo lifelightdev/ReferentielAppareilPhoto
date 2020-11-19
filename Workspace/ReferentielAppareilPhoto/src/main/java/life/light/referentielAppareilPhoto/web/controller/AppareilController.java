@@ -18,7 +18,7 @@ public class AppareilController {
     private AppareilDao appareilDao;
 
     // Récupére la liste des appareils photo
-    @RequestMapping(value = "/Appareil", method = RequestMethod.GET)
+    @GetMapping (value = "/Appareil")
     public Iterable<Appareil> listeAppareil(){
         return appareilDao.findAll();
     }
