@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class AppareilIntrouvableException extends Throwable {
+public class AppareilIntrouvableException extends Exception {
     public AppareilIntrouvableException(String s) {
         super(s);
     }
