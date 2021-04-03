@@ -1,21 +1,16 @@
-<p>appareil-list works!</p>
-<div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">modeEmploie</th>
-            <th scope="col">modele</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let appareil of appareils">
-            <td>{{ appareil.id }}<td>
-            <td>{{ appareil.modeEmploie }}</td>
-            <td>{{ appareil.modele }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div>
+  <table>
+    <tr>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Mode d'emploie</th>
+      <th scope="col">Modéle</th>
+      <th scope="col">Type</th>
+    </tr>
+    <tr *ngFor="let appareil of appareils">
+      <td>{{ appareil.id }}<td>
+      <td>{{ appareil.modeEmploie }}</td>
+      <td>{{ appareil.modele.marque.nom }} - {{ appareil.modele.nom }}</td>
+      <td>{{ appareil.typeAppareil.nom }}</td>
+    </tr>
+  </table>
+</div>

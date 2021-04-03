@@ -10,7 +10,8 @@ public class Appareil {
     private int id;
 
     private int modeEmploie;
-    private int modele;
+    @ManyToOne
+    private Modele modele;
     @ManyToOne
     private TypeAppareil typeAppareil;
 
@@ -18,7 +19,7 @@ public class Appareil {
 
     }
 
-    public Appareil(int id, int modeEmploie, int modele, TypeAppareil typeAppareil) {
+    public Appareil(int id, int modeEmploie, Modele modele, TypeAppareil typeAppareil) {
         this.id = id;
         this.modeEmploie = modeEmploie;
         this.modele = modele;
@@ -41,11 +42,11 @@ public class Appareil {
         this.modeEmploie = modeEmploie;
     }
 
-    public int getModele() {
+    public Modele getModele() {
         return modele;
     }
 
-    public void setModele(int modele) {
+    public void setModele(Modele modele) {
         this.modele = modele;
     }
 
@@ -64,6 +65,7 @@ public class Appareil {
                 ", modeEmploie=" + modeEmploie +
                 ", modele=" + modele +
                 ", NomTypeAppareil=" + typeAppareil.getNom() +
+                ", NomModele=" + modele.getNom() +
                 '}';
     }
 }
