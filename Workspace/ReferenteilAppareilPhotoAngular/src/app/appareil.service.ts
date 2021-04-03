@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Appareil } from './appareil';
 import { HttpClient} from '@angular/common/http';
 
-export const appareilsUrl = 'http://localhost:8080/Appareil'; // URL to web api
+export const appareilsUrl = `http://localhost:8080/appareil`; // URL to web api
 
 @Injectable({
   providedIn: 'root'
