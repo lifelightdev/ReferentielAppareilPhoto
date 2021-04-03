@@ -1,8 +1,6 @@
 package life.light.referentielAppareilPhoto.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Appareil {
@@ -13,15 +11,18 @@ public class Appareil {
 
     private int modeEmploie;
     private int modele;
+    @ManyToOne
+    private TypeAppareil typeAppareil;
 
     public Appareil(){
 
     }
 
-    public Appareil(int id, int modeEmploie, int modele) {
+    public Appareil(int id, int modeEmploie, int modele, TypeAppareil typeAppareil) {
         this.id = id;
         this.modeEmploie = modeEmploie;
         this.modele = modele;
+        this.typeAppareil = typeAppareil;
     }
 
     public int getId() {
@@ -48,12 +49,21 @@ public class Appareil {
         this.modele = modele;
     }
 
+    public TypeAppareil getTypeAppareil() {
+        return typeAppareil;
+    }
+
+    public void setTypeAppareil(TypeAppareil typeAppareil) {
+        this.typeAppareil = typeAppareil;
+    }
+
     @Override
     public String toString() {
         return "Appareil{" +
                 "id=" + id +
                 ", modeEmploie=" + modeEmploie +
                 ", modele=" + modele +
+                ", NomTypeAppareil=" + typeAppareil.getNom() +
                 '}';
     }
 }

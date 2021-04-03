@@ -2,6 +2,7 @@ package life.light.referentielAppareilPhoto.web.controller;
 
 import life.light.referentielAppareilPhoto.dao.AppareilDao;
 import life.light.referentielAppareilPhoto.model.Appareil;
+import life.light.referentielAppareilPhoto.model.TypeAppareil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -34,26 +35,32 @@ class AppareilControllerTest {
     void listeAppareil() throws Exception {
         List<Appareil> listeAppareil = new ArrayList<>();
         when(appareilDao.findAll()).thenReturn(listeAppareil);
-        this.mockMvc.perform(get("/Appareil")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/appareil")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("[]")));
  }
 
     @Test
     void afficherUnAppareil() throws Exception {
-        Appareil appareil = new Appareil(1,1,1);
+        TypeAppareil typeAppareil = new TypeAppareil();
+        typeAppareil.setId(1);
+        typeAppareil.setNom("Argentique");
+        Appareil appareil = new Appareil(1,1,1,typeAppareil);
         when(appareilDao.findById(1)).thenReturn(appareil);
         this.mockMvc.perform(get("/Appareil/1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("{\"id\":1,\"modeEmploie\":1,\"modele\":1}")));
+                .andExpect(content().string(containsString("{\"id\":1,\"modeEmploie\":1,\"modele\":1,\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"}}")));
     }
 
     @Test
     void listeAppareilParModele() throws Exception {
         List<Appareil> listeAppareil = new ArrayList<>();
-        Appareil appareil = new Appareil(1,1,1);
+        TypeAppareil typeAppareil = new TypeAppareil();
+        typeAppareil.setId(1);
+        typeAppareil.setNom("Argentique");
+        Appareil appareil = new Appareil(1,1,1,typeAppareil);
         listeAppareil.add(appareil);
         when(appareilDao.findByModele(1)).thenReturn(listeAppareil);
         this.mockMvc.perform(get("/AppareilByModele/1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("[{\"id\":1,\"modeEmploie\":1,\"modele\":1}]")));
+                .andExpect(content().string(containsString("[{\"id\":1,\"modeEmploie\":1,\"modele\":1,\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"}}]")));
     }
 
     @Autowired
