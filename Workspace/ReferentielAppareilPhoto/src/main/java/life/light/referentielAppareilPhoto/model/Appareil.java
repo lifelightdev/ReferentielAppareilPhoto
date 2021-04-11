@@ -1,6 +1,7 @@
 package life.light.referentielAppareilPhoto.model;
 
 import javax.persistence.*;
+import java.io.File;
 
 @Entity
 public class Appareil {
@@ -9,21 +10,23 @@ public class Appareil {
     @GeneratedValue
     private int id;
 
-    private int modeEmploie;
     @ManyToOne
     private Modele modele;
     @ManyToOne
     private TypeAppareil typeAppareil;
+    private File modeEmploie;
+    private File photo;
 
     public Appareil(){
 
     }
 
-    public Appareil(int id, int modeEmploie, Modele modele, TypeAppareil typeAppareil) {
+    public Appareil(int id, Modele modele, TypeAppareil typeAppareil, File modeEmploie, File photo) {
         this.id = id;
-        this.modeEmploie = modeEmploie;
         this.modele = modele;
         this.typeAppareil = typeAppareil;
+        this.modeEmploie = modeEmploie;
+        this.photo = photo;
     }
 
     public int getId() {
@@ -32,14 +35,6 @@ public class Appareil {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getModeEmploie() {
-        return modeEmploie;
-    }
-
-    public void setModeEmploie(int modeEmploie) {
-        this.modeEmploie = modeEmploie;
     }
 
     public Modele getModele() {
@@ -58,11 +53,18 @@ public class Appareil {
         this.typeAppareil = typeAppareil;
     }
 
+    public File getModeEmploie() { return modeEmploie; }
+
+    public void setModeEmploie(File modeEmploie) { this.modeEmploie = modeEmploie; }
+
+    public File getPhoto() { return photo; }
+
+    public void setPhoto(File photo) { this.photo = photo; }
+
     @Override
     public String toString() {
         return "Appareil{" +
                 "id=" + id +
-                ", modeEmploie=" + modeEmploie +
                 ", modele=" + modele +
                 ", NomTypeAppareil=" + typeAppareil.getNom() +
                 ", NomModele=" + modele.getNom() +

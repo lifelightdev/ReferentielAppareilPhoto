@@ -11,10 +11,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -53,10 +52,12 @@ class AppareilControllerTest {
         modele.setId(1);
         modele.setNom("500CM");
         modele.setMarque(marque);
-        Appareil appareil = new Appareil(1,1,modele,typeAppareil);
+        File modeEmploie = null;
+        File photo =null;
+        Appareil appareil = new Appareil(1,modele,typeAppareil,modeEmploie,photo);
         when(appareilDao.findById(1)).thenReturn(appareil);
         this.mockMvc.perform(get("/Appareil/1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("{\"id\":1,\"modeEmploie\":1,\"modele\":{\"id\":1,\"nom\":\"500CM\",\"marque\":{\"id\":1,\"nom\":\"Hasselblad\"}},\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"}}")));
+                .andExpect(content().string(containsString("{\"id\":1,\"modele\":{\"id\":1,\"nom\":\"500CM\",\"marque\":{\"id\":1,\"nom\":\"Hasselblad\"}},\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"},\"modeEmploie\":null,\"photo\":null}")));
     }
 
     @Test
@@ -72,11 +73,13 @@ class AppareilControllerTest {
         modele.setId(1);
         modele.setNom("500CM");
         modele.setMarque(marque);
-        Appareil appareil = new Appareil(1,1,modele,typeAppareil);
+        File modeEmploie = null;
+        File photo = null;
+        Appareil appareil = new Appareil(1,modele,typeAppareil,modeEmploie,photo);
         listeAppareil.add(appareil);
         when(appareilDao.findByModele(1)).thenReturn(listeAppareil);
         this.mockMvc.perform(get("/AppareilByModele/1")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("[{\"id\":1,\"modeEmploie\":1,\"modele\":{\"id\":1,\"nom\":\"500CM\",\"marque\":{\"id\":1,\"nom\":\"Hasselblad\"}},\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"}}]")));
+                .andExpect(content().string(containsString("[{\"id\":1,\"modele\":{\"id\":1,\"nom\":\"500CM\",\"marque\":{\"id\":1,\"nom\":\"Hasselblad\"}},\"typeAppareil\":{\"id\":1,\"nom\":\"Argentique\"},\"modeEmploie\":null,\"photo\":null}]")));
     }
 
     @Autowired
